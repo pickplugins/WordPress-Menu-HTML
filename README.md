@@ -7,8 +7,8 @@ Here is the output HTML from WordPress default `wp_nav_menu` function
 <nav id="site-navigation" class="main-navigation" role="navigation">
     <button class="menu-toggle">Menu</button>
     <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
-    <div class="menu-short-container">
-        <ul id="menu-short" class="nav-menu">
+    <div class="menu-container"> <!-- Do not  use this class for styling -->
+        <ul id="menu-short" class="nav-menu"> <!-- Use this class for styling -->
             <li id="menu-item-9468" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-9468"><a href="http://wpthemetestdata.wordpress.com/">Home</a></li>
             <li id="menu-item-9667" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-9667"><a href="http://192.168.0.90/themes-dev/about/">About</a></li>
 
