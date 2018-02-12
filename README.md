@@ -302,9 +302,15 @@ This class is added to menu items that correspond to a hierarchical ancestor of 
     color: #636363;
     font-weight: bold;
 }
-.menu-toggle {
-    display: none;
+
+
+
+@media screen and (min-width: 600px) {
+    .menu-toggle {
+        display: none;
+    }
 }
+
 
 
 
