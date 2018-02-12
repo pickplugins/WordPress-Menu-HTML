@@ -96,71 +96,98 @@ This class is added to menu items that correspond to taxonomies: i.e. categories
 
 ## Current-Page Menu Items #Current-Page Menu Items
 
-```html
-    .current-menu-item
-    This class is added to menu items that correspond to the currently rendered page.
+```css
+.current-menu-item{}
 ```
+    This class is added to menu items that correspond to the currently rendered page.
+
 
 ## Current-Page Parent Menu Items #Current-Page Parent Menu Items
 
-```html
-.current-menu-parent
+
+```css
+.current-menu-parent{}
+```
 This class is added to menu items that correspond to the hierarchical parent of the currently rendered page.
     
+```css
 .current-{object}-parent
+```
 This class is added to menu items that correspond to the hierachical parent of the currently rendered object, where {object} corresponds to the the value used for .menu-item-object-{object}.
 
+```css
 .current-{type}-parent
+```
 This class is added to menu items that correspond to the hierachical parent of the currently rendered type, where {type} corresponds to the the value used for .menu-item-type-{type}.
 
-```
+
 
 ## Current-Page Ancestor Menu Items #Current-Page Ancestor Menu Items
 
-```html
+
+```css
 .current-menu-ancestor
+```
 This class is added to menu items that correspond to a hierarchical ancestor of the currently rendered page.
 
+```css
 .current-{object}-ancestor
+```
 This class is added to menu items that correspond to a hierachical ancestor of the currently rendered object, where {object} corresponds to the the value used for .menu-item-object-{object}.
 
+```css
 .current-{type}-ancestor
+```
 This class is added to menu items that correspond to a hierachical ancestor of the currently rendered type, where {type} corresponds to the the value used for .menu-item-type-{type}.
 
-```
+
 
 ## Site Front Page Menu Items #Site Front Page Menu Items
 
-```html
-    .menu-item-home
-    This class is added to menu items that correspond to the site front page.
 
+```css
+.menu-item-home
 ```
+This class is added to menu items that correspond to the site front page.
+
+
 Top ↑
 ## Backward Compatibility with wp_page_menu() #Backward Compatibility with wp_page_menu()
 
 The following classes are added to maintain backward compatibility with the [[Function Reference/wp_page_menu|wp_page_menu()]] function output:
 
-```html
+
+```css
 .page_item
-    This class is added to menu items that correspond to a static page.
+```
+This class is added to menu items that correspond to a static page.
     
+```css
 .page_item_has_children
+```
 This class is added to menu items that have sub pages to it.
 
+```css
 .page-item-$ID
+```
 This class is added to menu items that correspond to a static page, where $ID is the static page ID.
 
+```css
 .current_page_item
+```
 This class is added to menu items that correspond to the currently rendered static page.
 
+```css
 .current_page_parent
+```
 This class is added to menu items that correspond to the hierarchical parent of the currently rendered static page.
 
+```css
 .current_page_ancestor
+```
 This class is added to menu items that correspond to a hierarchical ancestor of the currently rendered static page.
 
-```
+
 
 
 
