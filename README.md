@@ -7,7 +7,7 @@ Here is the output HTML from WordPress default `wp_nav_menu` function
 <nav id="site-navigation" class="main-navigation" role="navigation">
     <button class="menu-toggle">Menu</button>
     <div class="menu-container"> <!-- Do not  use this class for styling -->
-        <ul id="menu-short" class="nav-menu"> <!-- Use this class for styling -->
+        <ul id="menu-short" class="menu"> <!-- Use this class for styling -->
             <li id="menu-item-9468" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-9468"><a href="http://wpthemetestdata.wordpress.com/">Home</a></li>
             <li id="menu-item-9667" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-9667"><a href="http://192.168.0.90/themes-dev/about/">About</a></li>
 
@@ -191,124 +191,139 @@ This class is added to menu items that correspond to a hierarchical ancestor of 
 
 ```css
 
-/* Navigation Menu */
-.main-navigation {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	text-align: center;
+
+.menu {
+
 }
-.main-navigation li {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
-	font-size: 12px;
-	font-size: 0.857142857rem;
-	line-height: 1.42857143;
-}
-.main-navigation a {
-	color: #5e5e5e;
-}
-.main-navigation a:hover,
-.main-navigation a:focus {
-	color: #21759b;
-}
-.main-navigation ul.nav-menu,
-.main-navigation div.nav-menu > ul {
-	display: none;
-}
-.main-navigation ul.nav-menu.toggled-on,
-.menu-toggle {
-	display: inline-block;
-}
-.main-navigation ul.nav-menu,
-.main-navigation div.nav-menu > ul {
-    border-bottom: 1px solid #ededed;
-    border-top: 1px solid #ededed;
-    display: inline-block !important;
-    text-align: left;
-    width: 100%;
-}
-.main-navigation ul {
+
+ul.menu,
+.menu ul{
+    padding: 0;
     margin: 0;
-    text-indent: 0;
 }
-.main-navigation li a,
-.main-navigation li {
+
+.menu li ul li{
+    margin-left: 0;
+}
+
+.menu li {
     display: inline-block;
-    text-decoration: none;
-}
-.main-navigation li a {
-    border-bottom: 0;
-    color: #6a6a6a;
-    line-height: 3.692307692;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-.main-navigation li a:hover,
-.main-navigation li a:focus {
-    color: #000;
-}
-.main-navigation li {
-    margin: 0 40px 0 0;
-    margin: 0 2.857142857rem 0 0;
+    margin-left: 13px;
+    margin-right: 13px;
     position: relative;
+    line-height: 34px;
 }
-.main-navigation li ul {
-    margin: 0;
+
+.menu .sub-menu li {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    line-height: 16px;
+}
+
+.menu li a {
+    font-size: 14px;
+    font-family: Roboto-Bold;
+    font-weight: 400;
+    color: #fff;
+    display:block;
+    text-decoration: none;
+    line-height: 80px;
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+
+}
+.menu li.current-menu-item> a, .menu li.current_page_item> a, .menu li a:hover {
+    color:#007dff;
+}
+
+/*** DROPDOWN ***/
+.menu .sub-menu, .menu .children {
+    background-color: #fff;
+    display: none;
     padding: 0;
     position: absolute;
-    top: 100%;
-    z-index: 1;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+    margin-top: 0;
+    left: -13px;
+    z-index: 99999;
+    box-shadow: 0 0px 25px 3px rgba(190, 190, 190, 0.55);
+    border-radius: 5px;
 }
-.main-navigation li ul ul {
-    top: 0;
-    left: 100%;
+
+ul.menu ul a, .menu ul ul li a {
+    color: #333333;
+    margin: 0;
+    padding: 15px 25px;
+    min-width: 250px;
+    line-height: 20px;
+    -webkit-transition: .25s;
+    transition: .25s;
+    border-top: 1px solid #f4f4f4;
 }
-.main-navigation ul li:hover > ul,
-.main-navigation ul li:focus > ul,
-.main-navigation .focus > ul {
-    border-left: 0;
-    clip: inherit;
-    overflow: inherit;
-    height: inherit;
-    width: inherit;
+
+
+.menu .sub-menu {
+
 }
-.main-navigation li ul li a {
-    background: #efefef;
-    border-bottom: 1px solid #ededed;
+.menu .sub-menu:after,.menu .sub-menu:before {
+    bottom: 100%;
+    left: 15%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+
+}
+
+.menu .sub-menu:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+.menu .sub-menu:before {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+
+ul.menu ul li,
+.menu ul ul li {
+    padding-right:0;
+    margin-right:0;
+}
+
+
+
+ul.menu li:hover > ul,
+.menu ul li:hover > ul {
     display: block;
-    font-size: 11px;
-    font-size: 0.785714286rem;
-    line-height: 2.181818182;
-    padding: 8px 10px;
-    padding: 0.571428571rem 0.714285714rem;
-    width: 180px;
-    width: 12.85714286rem;
-    white-space: normal;
 }
-.main-navigation li ul li a:hover,
-.main-navigation li ul li a:focus {
-    background: #e3e3e3;
-    color: #444;
-}
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a,
-.main-navigation .current_page_item > a,
-.main-navigation .current_page_ancestor > a {
-    color: #636363;
-    font-weight: bold;
+
+.menu .sub-menu ul, .menu .children ul {
+    left: 80%;
+    top: 10%;
 }
 
 
-
-@media screen and (min-width: 600px) {
-    .menu-toggle {
-        display: none;
-    }
+.menu-toggle{}
+.menu-toggle li {
+    text-align: center;
+    color: #fff;
 }
+.menu-toggle li a {
+    color: #fff;
+    padding: 8px 0;
+    display: block;
+}
+
 
 
 
